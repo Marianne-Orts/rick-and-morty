@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Route, Switch } from "react-router-dom";
+import logo from "../images/Rick_and_Morty_-_logo_(English).png";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
@@ -18,24 +19,46 @@ const App = () => {
   const filterCharacters = characters.filter((character) => {
     return character.name.toLowerCase().includes(input.toLowerCase());
   });
-
+  //alamcena la info en setInput del valor filtrado
   const handleFilter = (inputChange) => {
     setInput(inputChange.value);
+  };
+  //parseInt pq el id es un string y hay que pasarlo a numero
+  // al recargar la pagina no encuentra characters, pq el array esta vacio y tarda 120ms en llamar al fetch
+  //por eso lo de pagina no encontrada, po si tarda mas de lo previsto
+  const renderCharacterDetail = (props) => {
+    const id = parseInt(props.match.params.id);
+    const selectCharacterDetail = characters.find((character) => {
+      return character.id === id;
+    });
+    if (selectCharacterDetail === undefined) {
+      return "Personaje no encontrado";
+    } else {
+      return <CharacterDetail character={selectCharacterDetail} />;
+    }
   };
 
   return (
     <>
       <div className="App-container">
-        <header className="App-header">logo</header>
-        <Filters handleFilter={handleFilter} />
-        <section className="App-section">
-          <CharacterList characters={filterCharacters} />
-          <Switch>
-            <Route
-              path="/character/:id" /* render={renderDetail} */ /* component={CharacterCard} */
-            />
-          </Switch>
-        </section>
+        <header className="App-header">
+          <img
+            className="App-logo"
+            src={logo}
+            alt="Logo Rick and Morty"
+            title="Logo Rick and Morty"
+          />
+        </header>
+
+        <Switch>
+          <Route exact path="/">
+            <section className="App-section">
+              <Filters handleFilter={handleFilter} />
+              <CharacterList characters={filterCharacters} />
+            </section>
+          </Route>
+          <Route path="/CharacterDetail/:id" render={renderCharacterDetail} />
+        </Switch>
       </div>
     </>
   );

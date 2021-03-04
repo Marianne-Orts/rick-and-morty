@@ -15,7 +15,6 @@ const Filters = (props) => {
 };
 export default Filters;
 
-/* Filters.defaultProps = {
-  inputType: "text", //inputType es nombre provisional por ahora
+Filters.defaultProps = {
+  type: "text",
 };
- */

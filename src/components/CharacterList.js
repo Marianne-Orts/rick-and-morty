@@ -4,7 +4,7 @@ import CharacterCard from "./CharacterCard";
 const CharacterList = (props) => {
   const renderCharacterList = props.characters.map((character, id) => (
     <li key={id}>
-      <CharacterCard character={character} />
+      <CharacterCard character={character} /* handleCard={handleCard} */ />
     </li>
   ));
   return <ul>{renderCharacterList}</ul>;
