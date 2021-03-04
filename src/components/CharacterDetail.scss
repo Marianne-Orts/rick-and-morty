@@ -2,28 +2,31 @@
 @import "./Reset";
 
 .CharacterDetail {
-  background-color: $background-color-page;
-  &__main {
-    width: 70%;
-    height: 40vh;
-    background-color: $background-color-detail;
-    color: $color-texts;
-    margin: 100px;
-    /* display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto); */
-  }
+  background-color: $background-color-detail;
+  grid-column: 2;
+  height: 50vh;
+  width: 100%;
+  color: $color-texts;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // grid-template-rows: 10% 40%;
+
   &__link {
+    background-color: $background-color-page;
     color: $color-texts;
+    grid-column: span 2;
+    justify-self: end;
   }
   &__article {
     width: 45%;
     height: 20vh;
   }
   &__image {
+    justify-self: center;
+    align-self: center;
   }
-  &__name {
-  }
+
   &__detail {
+    align-self: center;
   }
 }
