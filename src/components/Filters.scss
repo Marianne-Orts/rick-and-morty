@@ -1,0 +1,20 @@
+@import "./Variables";
+@import "./Reset";
+.Filters {
+  &__form {
+    margin: 50px;
+
+    grid-column: span 4;
+    justify-content: center;
+  }
+  &__input {
+    width: 400px;
+    height: 40px;
+    border-color: $background-color-detail;
+    background-color: $background-color-page;
+    color: $color-texts;
+    outline: none;
+    justify-self: center;
+    margin-left: 400px;
+  }
+}

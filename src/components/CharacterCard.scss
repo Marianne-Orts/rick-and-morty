@@ -1,0 +1,13 @@
+@import "./Variables";
+@import "./Reset";
+
+.CharacterCard {
+  width: 300px;
+  height: 400px;
+  background-color: $background-color-detail;
+  /* grid-column-start: span; */
+  &__link {
+    text-decoration: none;
+    color: $color-texts;
+  }
+}

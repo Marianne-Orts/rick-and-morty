@@ -1,4 +1,5 @@
 import React from "react";
+import "./Filters.scss";
 
 const Filters = (props) => {
   const handleChange = (event) => {
@@ -7,8 +8,8 @@ const Filters = (props) => {
 
   return (
     <>
-      <form className="form">
-        <input type="text" onChange={handleChange} />
+      <form className="Filters__form">
+        <input className="Filters__input" type="text" onChange={handleChange} />
       </form>
     </>
   );

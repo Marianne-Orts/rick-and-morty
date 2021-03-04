@@ -1,0 +1,11 @@
+@import "./Variables";
+@import "./Reset";
+.CharacterList {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px 15px;
+  /* grid-template-rows: ; 
+  
+  grid-auto-flow: dense; */
+}

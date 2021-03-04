@@ -5,6 +5,7 @@ import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import getCharactersFromApi from "../services/GetCharactersFromApi";
+import "./App.scss";
 
 const App = () => {
   const [characters, setCharacters] = useState([]);
