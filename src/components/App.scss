@@ -11,7 +11,6 @@
   background-color: $background-color-page;
   display: flex;
   justify-content: center;
-  grid-column: span 3;
   justify-self: center;
   &__logo {
     height: 20vmin;
@@ -19,6 +18,4 @@
 }
 .App-section-list {
   background-color: $background-color-page;
-  grid-column: 2;
-  justify-self: center;
 }

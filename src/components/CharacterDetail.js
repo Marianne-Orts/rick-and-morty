@@ -35,7 +35,7 @@ const CharacterDetail = (props) => {
           />
         </div>
         <div className="CharacterDetail__detail">
-          <h3>{props.character.name}</h3>
+          <h2>{props.character.name}</h2>
           <p>
             Status: {props.character.status} {iconStatus}
           </p>

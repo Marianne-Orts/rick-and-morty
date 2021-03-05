@@ -2,8 +2,8 @@
 @import "./Reset";
 
 .CharacterCard {
-  /*width: 300px;*/
-  height: 300px;
+  width: 300px;
+  height: 400px;
   background-color: $background-color-detail;
   &__link {
     text-decoration: none;
@@ -11,5 +11,8 @@
   }
   &__img {
     width: 100%;
+  }
+  &__description {
+    margin-left: 15px;
   }
 }

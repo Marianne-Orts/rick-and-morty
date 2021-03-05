@@ -8,6 +8,12 @@
   align-items: stretch;
   margin: 4em;
 }
+.alert {
+  color: $background-color-detail;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 50px;
+}
 
 @media all and (min-width: 1024px) {
   .CharacterList {

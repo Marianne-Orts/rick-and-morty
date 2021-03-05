@@ -12,7 +12,9 @@ const CharacterList = (props) => {
   ));
 
   const result = emptyList ? (
-    <p>No hay ningún pesonaje que coincida con {props.input}</p>
+    <p className="alert">
+      No hay ningún pesonaje que coincida con " {props.input} ".
+    </p>
   ) : (
     <ul className="CharacterList">{renderCharacterList}</ul>
   );
