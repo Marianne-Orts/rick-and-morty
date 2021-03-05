@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Filters.scss";
 
 const Filters = (props) => {
@@ -9,7 +9,12 @@ const Filters = (props) => {
   return (
     <>
       <form className="Filters__form">
-        <input className="Filters__input" type="text" onChange={handleChange} />
+        <input
+          className="Filters__input"
+          type="text"
+          value={props.input} //guarda el valor que se ha introducido
+          onChange={handleChange}
+        />
       </form>
     </>
   );

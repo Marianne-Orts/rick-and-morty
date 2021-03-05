@@ -17,9 +17,20 @@ const App = () => {
   }, []);
 
   //filtrame los personajes cuyo nombre incluya el input
-  const filterCharacters = characters.filter((character) => {
-    return character.name.toLowerCase().includes(input.toLowerCase());
-  });
+  const filterCharacters = characters
+    .filter((character) => {
+      return character.name.toLowerCase().includes(input.toLowerCase());
+    })
+    .sort((a, b) => {
+      if (a.name > b.name) {
+        return 1;
+      }
+      if (a.name < b.name) {
+        return -1;
+      }
+      // a debe ser igual a b
+      return 0;
+    });
   //alamcena la info en setInput del valor filtrado
   const handleFilter = (inputChange) => {
     setInput(inputChange.value);
@@ -54,8 +65,8 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <section className="App-section">
-              <Filters handleFilter={handleFilter} />
-              <CharacterList characters={filterCharacters} />
+              <Filters handleFilter={handleFilter} input={input} />
+              <CharacterList characters={filterCharacters} input={input} />
             </section>
           </Route>
           <Route path="/CharacterDetail/:id" render={renderCharacterDetail} />
