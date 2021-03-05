@@ -1,5 +1,17 @@
 @import "./Variables";
 @import "./Reset";
+.human {
+  width: 20px;
+  height: 20px;
+}
+.alien {
+  width: 20px;
+  height: 20px;
+}
+.death {
+  width: 20px;
+  height: 20px;
+}
 
 .CharacterDetail {
   background-color: $background-color-detail;

@@ -44,7 +44,7 @@ const App = () => {
       return character.id === id;
     });
     if (selectCharacterDetail === undefined) {
-      return "Personaje no encontrado";
+      return "El personaje que buscas no existe";
     } else {
       return <CharacterDetail character={selectCharacterDetail} />;
     }

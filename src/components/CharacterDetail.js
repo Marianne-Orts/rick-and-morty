@@ -2,15 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./App.scss";
 import "./CharacterDetail.scss";
+import alien from "../images/alien-head-svgrepo-com.svg";
+import death from "../images/death-skull-and-bones-svgrepo-com.svg";
+import human from "../images/human-head-silhouette-with-cogwheels-svgrepo-com.svg";
 
 const CharacterDetail = (props) => {
   const iconSpecie =
     props.character.species === "Human" ? (
-      <i class="fa fa-user" aria-hidden="true"></i>
+      <img className="human" src={human} alt="Imagen de un hombre" />
     ) : (
-      <i class="fa fa-optin-monster" aria-hidden="true"></i>
+      <img className="alien" src={alien} alt="Imagen de un Alien" />
     );
-
+  const iconStatus =
+    props.character.status === "Dead" ? (
+      <img className="death" src={death} alt="Imagen de una calavera" />
+    ) : (
+      ""
+    );
   return (
     <>
       <main className="CharacterDetail">
@@ -28,7 +36,9 @@ const CharacterDetail = (props) => {
         </div>
         <div className="CharacterDetail__detail">
           <h3>{props.character.name}</h3>
-          <p>Status: {props.character.status}</p>
+          <p>
+            Status: {props.character.status} {iconStatus}
+          </p>
           <p>
             Species: {props.character.species} {iconSpecie}
           </p>
@@ -40,7 +50,3 @@ const CharacterDetail = (props) => {
   );
 };
 export default CharacterDetail;
-/* 
-monster <i class="fa fa-optin-monster" aria-hidden="true"></i>
-alien <i class="fa fa-reddit-alien" aria-hidden="true"></i>
-human <i class="fa fa-user" aria-hidden="true"></i> */
