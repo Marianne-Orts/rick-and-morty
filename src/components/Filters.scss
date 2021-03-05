@@ -2,8 +2,8 @@
 @import "./Reset";
 .Filters {
   &__form {
-    margin: 50px;
-    grid-column: span 4;
+    width: 100%;
+    display: flex;
     justify-content: center;
   }
   &__input {
@@ -14,6 +14,5 @@
     color: $color-texts;
     outline: none;
     justify-self: center;
-    margin-left: 400px;
   }
 }

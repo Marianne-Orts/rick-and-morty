@@ -64,12 +64,14 @@ const App = () => {
 
         <Switch>
           <Route exact path="/">
-            <section className="App-section">
+            <section className="App-section-list">
               <Filters handleFilter={handleFilter} input={input} />
               <CharacterList characters={filterCharacters} input={input} />
             </section>
           </Route>
-          <Route path="/CharacterDetail/:id" render={renderCharacterDetail} />
+          <section className="App-section-detail">
+            <Route path="/CharacterDetail/:id" render={renderCharacterDetail} />
+          </section>
         </Switch>
       </div>
     </>

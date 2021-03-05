@@ -3,9 +3,14 @@
 .CharacterList {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 15px 15px;
-  /* grid-template-rows: ; 
-  
-  grid-auto-flow: dense; */
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px 20px;
+  align-items: stretch;
+  margin: 4em;
+}
+
+@media all and (min-width: 1024px) {
+  .CharacterList {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
